@@ -1,0 +1,89 @@
+import { CryptoIcon, ShieldIcon, ZeonIcon } from "../../assets";
+
+export const Slides = [
+  {
+    id:1,
+    image: {
+      width: 80,
+      height: 80,
+      value: 'base', // or 'MD', 'LG', etc. if you're using your switch cases
+      src: ZeonIcon,
+    },
+    title: 'Welcome To Zeon Wallet',
+    subtitle: 'Take full control of your digital assets with fast, secure, multi-chain access.',
+  },
+  {
+    id:2,
+    image: {
+      width: 80,
+      height: 80,
+      value: 'base', // or 'MD', 'LG', etc. if you're using your switch cases
+      src: CryptoIcon,
+    },
+    title: 'Do More Than Just Hold',
+    subtitle: 'Send crypto, stake tokens, access layer-2 chains—without leaving your wallet.',
+  },
+  {
+    id:3,
+    image: {
+      width: 80,
+      height: 80,
+      value: 'base', // or 'MD', 'LG', etc. if you're using your switch cases
+      src: ShieldIcon,
+    },
+    title: 'Your Security Is Non-Negotiable',
+    subtitle: 'No seed phrase? No stress. You retain your seed-less key with built-in fraud protection.',
+  },
+];
+       
+
+export const MnemonicData = [
+    {
+        id: 1,
+        name: "vintage"
+    },
+    {
+        id: 2,
+        name: "obscure"
+    },
+    {
+        id: 3,
+        name: "slab"
+    },
+    {
+        id: 4,
+        name: "bundle"
+    },
+    {
+        id: 5,
+        name: "twin"
+    },
+    {
+        id: 6,
+        name: "garment"
+    },
+    {
+        id: 7,
+        name: "slice"
+    },
+    {
+        id: 8,
+        name: "curtain"
+    },
+    {   
+        id: 9,
+        name: "walnut"
+    },
+    {
+        id: 10,
+        name: "zebra"
+    },
+    {
+        id: 11,
+        name: "assist"
+    },
+    {
+        id: 12,
+        name: "aspect"
+    },
+]

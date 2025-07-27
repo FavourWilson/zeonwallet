@@ -21,7 +21,7 @@ const Splash = () => {
     <div className="relative z-40 flex justify-end items-end px-5">
         <NavLink className="bg-transparent focus:outline-none active:bg-transparent text-white" to={'/create-wallet'}>Skip</NavLink>
       </div>
-       <div className="bg-dark h-screen text-white flex flex-col justify-center items-center gap-6 overflow-hidden">
+       <div className="relative z-40 bg-dark h-screen text-white flex flex-col justify-center items-center gap-6 overflow-hidden">
         
         <div
           className="flex transition-transform duration-700 ease-in-out"

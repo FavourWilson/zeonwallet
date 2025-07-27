@@ -29,7 +29,7 @@ const Button = ({
   const base = `inline-flex items-center justify-center w-${width} h-${height} rounded-md font-semibold`;
   const styles =
     variant === 'bordered'
-      ? 'border border-purple-500 text-purple-500 bg-transparent px-3 py-2 rounded-xl'
+      ? 'border border-purple-500 text-white bg-transparent px-3 py-2 rounded-xl'
       : 'bg-purple-500 text-white px-3 py-2 rounded-xl';
 
   const className = `${base} ${styles}`;

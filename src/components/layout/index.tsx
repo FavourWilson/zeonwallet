@@ -8,7 +8,7 @@ type ILayout = {
 const AppLayout = ({children}:ILayout) => {
    
   return (
-     <div className="relative h-screen bg-dark py-5">
+     <div className="relative h-screen bg-dark py-5 overflow-hidden">
       {/* Blurs */}
       <div className="z-10 absolute bottom-0 right-64"><Goldblur /></div>
       <div className="z-10 absolute bottom-10 right-0"><Goldblur /></div>

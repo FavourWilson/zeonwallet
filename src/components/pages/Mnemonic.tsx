@@ -14,9 +14,12 @@ const Mnemonic = () => {
             <Typography value={"content"} className="font-bold" size={'lg'}>
                  💡 Write it down. Never share it.
             </Typography>
-            <RecoveryPhase/>
+            <div className="blur-md hover:blur-none">
+                <RecoveryPhase/>
+            </div>
+            
             <div className="mt-20">
-                <Button variant={"filled"} width={28} value={"Continue"} />
+                <Button variant={"filled"} width={28} value={"Continue"} to="/new-password"/>
             </div>
             
         </div>

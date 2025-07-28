@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import { FaCheck } from "react-icons/fa6";
 
 
 type IButton = {
@@ -12,6 +13,7 @@ type IButton = {
   type?: 'button' | 'submit' | 'reset';
   target?: '_blank' | '_self' | '_parent' | '_top';
   rel?: string;
+  checked?: boolean;
 };
 
 const Button = ({
@@ -25,6 +27,7 @@ const Button = ({
   type = 'button',
   target,
   rel,
+  checked = false
 }: IButton) => {
   const base = `inline-flex items-center justify-center w-${width} h-${height} rounded-md font-semibold`;
   const styles =
@@ -50,6 +53,15 @@ const Button = ({
         {value}
       </a>
     );
+  }
+
+  if(checked){
+    return(
+      <button className={`${base} ${styles}`}>
+      {checked && <FaCheck color="white" className="w-4 h-4" />}
+      {value}
+    </button>
+    )
   }
 
   // Default button behavior

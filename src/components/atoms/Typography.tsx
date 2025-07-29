@@ -16,13 +16,13 @@ const Typography = ({ value, size, color = 'white', children, className }: ITypo
 
   switch (value) {
     case 'Heading':
-      return <h1 style={style} className={className}>{children}</h1>;
+      return <h1 style={style} className={`${className} font-poppins`}>{children}</h1>;
     case 'content':
-      return <p style={style} className={className}>{children}</p>;
+      return <p style={style} className={`${className} font-poppins`}>{children}</p>;
     case 'subtitle':
-      return <span style={style} className={className}>{children}</span>;
+      return <span style={style} className={`${className} font-poppins`}>{children}</span>;
     default:
-      return <span style={style} className={className}>{children}</span>;
+      return <span style={style} className={`${className} font-poppins`}>{children}</span>;
   }
 };
 

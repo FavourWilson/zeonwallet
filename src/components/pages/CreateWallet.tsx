@@ -9,7 +9,7 @@ const CreateWallet = () => {
    <AppLayout>
       <div className="z-50 relative h-screen flex flex-col justify-center items-center gap-4">
         <Imagesize width={250} value={"base"} src={ZeonIcon} />
-        <Typography value={"content"} size={50}>
+        <Typography value={"content"} size={40}>
             To Get Started
         </Typography>
 

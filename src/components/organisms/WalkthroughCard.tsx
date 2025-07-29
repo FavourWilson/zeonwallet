@@ -15,10 +15,10 @@ interface WalkthroughCardProps {
 
 const WalkthroughCard: React.FC<WalkthroughCardProps> = ({ image, title, subtitle }) => {
     return (
-        <div className="w-full sm:w-[250px] flex flex-col items-center justify-between">
+        <div className="w-full sm:w-[250px] flex flex-col items-center gap-2">
             <Imagesize {...image} />
             <h2 className="text-white font-bold text-2xl text-center">{title}</h2>
-            <p className="text-white text-sm text-center mt-2 px-2">{subtitle}</p>
+            <p className="text-white text-sm text-center px-2">{subtitle}</p>
         </div>
 
     );

@@ -56,7 +56,7 @@ const Input = ({
         <button
           type="button"
           onClick={onButtonClick}
-          className="bg-purple-500 text-white px-3 py-1 rounded-md text-sm"
+          className="bg-purple-500 text-white px-3 py-1 rounded-md text-sm font-poppins"
         >
           {buttonText}
         </button>

@@ -1,12 +1,16 @@
 import Goldblur from "../atoms/Goldblur";
 import PurpleBlur from "../atoms/PurpleBlur";
+import { useIsDesktop } from "../utils/NotDesktop";
 
 
 type ILayout = {
     children: React.ReactNode;
 }
 const AppLayout = ({children}:ILayout) => {
-   
+    const isDesktop = useIsDesktop();
+
+  if (isDesktop) return null;
+
   return (
      <div className="relative h-screen bg-dark py-5 overflow-hidden">
       {/* Blurs */}

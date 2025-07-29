@@ -1,18 +1,21 @@
 import React from 'react';
 
 type InputProps = {
+  as?: 'input' | 'textarea';
   placeholder?: string;
   value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  icon?: string; // URL to icon/image
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  icon?: string; // Optional image or icon URL
   buttonText?: string;
   onButtonClick?: () => void;
   type?: string;
   className?: string;
+  rows?: number; // Only for textarea
   name:string;
 };
 
 const Input = ({
+  as = 'input',
   placeholder,
   value,
   onChange,
@@ -21,26 +24,34 @@ const Input = ({
   onButtonClick,
   type = 'text',
   className = '',
+  rows = 4,
   name
 }: InputProps) => {
+  const baseClass = `flex items-center border border-gray-300 rounded-md px-3 py-2 gap-2 ${className}`;
+
+  const sharedProps = {
+    placeholder,
+    name,
+    value,
+    onChange,
+    className: 'flex-1 outline-none bg-transparent w-full text-white',
+  };
+
   return (
-    <div className={`flex items-center border border-purple rounded-md px-3 py-2 gap-2 ${className}`}>
+    <div className={baseClass}>
       {/* Icon/Image */}
       {icon && (
         <img src={icon} alt="icon" className="w-5 h-5 object-contain" />
       )}
 
-      {/* Input */}
-      <input
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        name={name}
-        onChange={onChange}
-        className="flex-1 outline-none bg-transparent"
-      />
+      {/* Input or Textarea */}
+      {as === 'textarea' ? (
+        <textarea rows={rows} {...sharedProps} />
+      ) : (
+        <input type={type} {...sharedProps} />
+      )}
 
-      {/* Button */}
+      {/* Optional Button */}
       {buttonText && (
         <button
           type="button"

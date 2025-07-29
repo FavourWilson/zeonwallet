@@ -9,12 +9,12 @@ const CreateWallet = () => {
    <AppLayout>
       <div className="z-50 relative h-screen flex flex-col justify-center items-center gap-4">
         <Imagesize width={20} value={"base"} src={ZeonIcon} />
-        <Typography value={"content"} size={'3xl'}>
+        <Typography value={"content"} size={80}>
             To Get Started
         </Typography>
 
-        <Button variant={"filled"} width={'sm'} value={"Create Wallet"} to="/mnemonic"  />
-        <Button variant={"bordered"} width={'sm'} value={"Import Wallet"} to="" />
+        <Button variant={"filled"} width={64} value={"Create Wallet"} to="/mnemonic"  />
+        <Button variant={"bordered"} width={64} value={"Import Wallet"} to="" />
       </div>
 
    </AppLayout>

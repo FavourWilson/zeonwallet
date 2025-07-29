@@ -2,24 +2,27 @@ import type { ReactNode } from 'react';
 
 type ITypography = {
   value: 'Heading' | 'content' | 'subtitle';
-  size: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | number;
+  size:  number;
   color?: string; // optional, since you might use multiple colors inside
   children: ReactNode;
   className?: string;
 };
 
 const Typography = ({ value, size, color = 'white', children, className }: ITypography) => {
-  const baseClass = `text-${typeof size === 'number' ? size : size} text-${color} ${className}`;
+  const style = {
+    fontSize: typeof size === 'number' ? `${size}px` : undefined,
+    color,
+  };
 
   switch (value) {
     case 'Heading':
-      return <h1 className={baseClass}>{children}</h1>;
+      return <h1 style={style} className={className}>{children}</h1>;
     case 'content':
-      return <p className={baseClass}>{children}</p>;
+      return <p style={style} className={className}>{children}</p>;
     case 'subtitle':
-      return <span className={baseClass}>{children}</span>;
+      return <span style={style} className={className}>{children}</span>;
     default:
-      return <span className={baseClass}>{children}</span>;
+      return <span style={style} className={className}>{children}</span>;
   }
 };
 

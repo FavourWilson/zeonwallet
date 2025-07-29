@@ -1,4 +1,7 @@
-import { CryptoIcon, ShieldIcon, ZeonIcon } from "../../assets";
+import { ArbitrumIcon, BaseIcon, CryptoIcon, EthereumIcon, ShieldIcon, TronIcon, USDCIcon, USDTIcon, ZeonIcon } from "../../assets";
+import { BsQrCode } from "react-icons/bs";
+import { GrSend } from "react-icons/gr";
+import { TbExchange } from "react-icons/tb";
 
 export const Slides = [
   {
@@ -86,4 +89,79 @@ export const MnemonicData = [
         id: 12,
         name: "aspect"
     },
+]
+
+
+
+export const MenuData = [
+  {
+    name:"Receive",
+    icon: BsQrCode,
+    href: 'receive'
+  },
+  {
+    name:"Send",
+    icon: GrSend,
+    href: 'send'
+  },
+  {
+    name:"Swap",
+    icon: TbExchange,
+    href: 'swap'
+  },
+]
+
+export const NativeWalletData = [
+  {
+    id:1,
+    network: "Ethereum",
+    coinImg: EthereumIcon,
+    balance: 0.0267,
+    Equivalent: 100
+  },
+  {
+    id:2,
+    network: "Arbitrum",
+    coinImg: ArbitrumIcon,
+    balance: 200,
+    Equivalent: 93
+  },
+  {
+    id:3,
+    network: "Base",
+    coinImg: BaseIcon,
+    balance: 2000,
+    Equivalent: 1320
+  },
+  {
+    id:4,
+    network: "Tron",
+    coinImg: TronIcon,
+    balance: 200 ,
+    Equivalent: 62.60
+  },
+]
+
+export const StableWalletData = [
+  {
+    id:1,
+    network: "Tether Dollar",
+    coinImg: USDTIcon,
+    balance: 100,
+    Equivalent: 100
+  },
+  {
+    id:2,
+    network: "US Dollar Currency",
+    coinImg: USDCIcon,
+    balance: 400,
+    Equivalent: 100
+  },
+  {
+    id:2,
+    network: "Tron",
+    coinImg: USDTIcon,
+    balance: 400,
+    Equivalent: 100
+  },
 ]

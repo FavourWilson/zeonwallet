@@ -8,10 +8,10 @@ const Mnemonic = () => {
   return (
     <AppLayout>
         <div className="relative flex flex-col justify-center items-center gap-3 mt-24 z-40">
-            <Typography value={"content"} size={'lg'}>
+            <Typography value={"content"} size={32}>
                  🔐 Your Recovery Phrase
             </Typography>
-            <Typography value={"content"} className="font-bold" size={'lg'}>
+            <Typography value={"content"} className="font-bold" size={32}>
                  💡 Write it down. Never share it.
             </Typography>
             <div className="blur-md hover:blur-none">

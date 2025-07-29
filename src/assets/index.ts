@@ -7,7 +7,8 @@ import TronIcon from './shield.svg'
 import ZeonIcon from './Zeon.svg'
 import SettingsIcon from './Settings.svg'
 import CryptoIcon from './Crypto.svg'
-
+import USDTIcon from './USDT.svg'
+import USDCIcon from './USDC.svg'
 export {
     ArbitrumIcon, 
     BaseIcon, 
@@ -17,5 +18,7 @@ export {
     TronIcon, 
     ZeonIcon,
     SettingsIcon,
-    CryptoIcon
+    CryptoIcon,
+    USDCIcon,
+    USDTIcon
 }

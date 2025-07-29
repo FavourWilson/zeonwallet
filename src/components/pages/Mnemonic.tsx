@@ -7,14 +7,14 @@ import RecoveryPhase from "../organisms/RecoveryPhase"
 const Mnemonic = () => {
   return (
     <AppLayout>
-        <div className="relative flex flex-col justify-center items-center gap-3 mt-24 z-40">
-            <Typography value={"content"} size={18}>
+        <div className="relative flex flex-col justify-center items-center gap-3 mt-24 z-50">
+            <Typography value={"content"} size={14}>
                  🔐 Your Recovery Phrase
             </Typography>
-            <Typography value={"content"} className="font-bold" size={24}>
+            <Typography value={"content"} className="font-bold" size={18}>
                  💡 Write it down. Never share it.
             </Typography>
-            <div className="blur-md hover:blur-none">
+            <div className="blur-lg hover:blur-none">
                 <RecoveryPhase/>
             </div>
             

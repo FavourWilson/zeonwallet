@@ -6,8 +6,8 @@ type IMnemonicCard ={
 }
 const MnemonicCard = ({id, name}:IMnemonicCard) => {
   return (
-    <div className="w-28 border-2 border-white px-1.5 py-1.5 rounded-xl">
-        <Typography className="text-center font-poppins font-bold" value={"content"} size={0}>
+    <div className="w-28 border-2 border-white px-2 py-4 rounded-xl">
+        <Typography className="text-center text-white font-poppins font-bold" value={"content"} size={12}>
              {id}. {name}
         </Typography>
     </div>

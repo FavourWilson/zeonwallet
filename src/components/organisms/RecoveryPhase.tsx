@@ -3,7 +3,7 @@ import MnemonicCard from '../molecules/MnemonicCard'
 
 const RecoveryPhase = () => {
   return (
-    <div className="grid grid-cols-3 gap-3 justify-center items-center">
+    <div className="grid grid-cols-3 gap-3 justify-center items-center z-50">
       {
         MnemonicData.map((data)=>(
             <MnemonicCard id={data.id} name={data.name} />

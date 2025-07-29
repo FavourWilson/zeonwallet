@@ -9,8 +9,7 @@ const Imagesize = ({width,height,value, src}:TSize) => {
   switch (value) {
     case "base":
         return (
-            <img src={src} style={{ width: `${width}px`, height: `${height}px` }}
-  className="object-contain"/>
+            <img src={src} style={{ width: `${width}px`, height: `${height}px` }}/>
         )
     case "XL":
         return (

@@ -7,7 +7,7 @@ export const Slides = [
   {
     id:1,
     image: {
-      width: 80,
+      width: 250,
       height: 80,
       value: 'base', // or 'MD', 'LG', etc. if you're using your switch cases
       src: ZeonIcon,
@@ -18,7 +18,7 @@ export const Slides = [
   {
     id:2,
     image: {
-      width: 80,
+      width: 250,
       height: 80,
       value: 'base', // or 'MD', 'LG', etc. if you're using your switch cases
       src: CryptoIcon,
@@ -29,7 +29,7 @@ export const Slides = [
   {
     id:3,
     image: {
-      width: 80,
+      width: 250,
       height: 80,
       value: 'base', // or 'MD', 'LG', etc. if you're using your switch cases
       src: ShieldIcon,

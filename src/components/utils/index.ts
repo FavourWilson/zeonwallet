@@ -2,6 +2,7 @@ import { ArbitrumIcon, BaseIcon, CryptoIcon, EthereumIcon, ShieldIcon, TronIcon,
 import { BsQrCode } from "react-icons/bs";
 import { GrSend } from "react-icons/gr";
 import { TbExchange } from "react-icons/tb";
+import { FaDollarSign } from "react-icons/fa";
 
 export const Slides = [
   {
@@ -37,7 +38,7 @@ export const Slides = [
     title: 'Your Security Is Non-Negotiable',
     subtitle: 'No seed phrase? No stress. You retain your seed-less key with built-in fraud protection.',
   },
-];
+]as const;
        
 
 export const MnemonicData = [
@@ -108,6 +109,11 @@ export const MenuData = [
     name:"Swap",
     icon: TbExchange,
     href: 'swap'
+  },
+  {
+    name:"Buy",
+    icon: FaDollarSign,
+    href: 'buy'
   },
 ]
 

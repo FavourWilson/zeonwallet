@@ -5,7 +5,6 @@ import Imagesize from '../atoms/Imagesize';
 interface WalkthroughCardProps {
     image: {
         width: number;
-        height: number;
         value: "base" | "XL" | "LG" | "MD";
         src: string;
     };

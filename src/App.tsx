@@ -5,6 +5,7 @@ import Mnemonic from "./components/pages/Mnemonic"
 import CreateNewPassword from "./components/pages/CreateNewPassword"
 import ImportWallet from "./components/pages/ImportWallet"
 import Home from "./components/pages/Home"
+import Receive from "./components/pages/Receive"
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/new-password" element={<CreateNewPassword />} />
         <Route path="/import-wallet" element={<ImportWallet />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/receive" element={<Receive />} />
     </Routes>
   )
 }

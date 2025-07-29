@@ -7,7 +7,7 @@ import TransactionMenu from "../organisms/TransactionMenu"
 const Home = () => {
   return (
     <DashboardLayout>
-        <div className="flex flex-col  gap-4">
+        <div className="flex flex-col gap-4">
             <Header/>
             <WalletBalance/>
             <TransactionMenu/>

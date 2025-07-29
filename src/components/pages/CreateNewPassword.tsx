@@ -6,7 +6,7 @@ const CreateNewPassword = () => {
   return (
    <AuthLayout>
       <div className="relative flex flex-col justify-center items-center gap-4">
-         <Typography value={"content"} className="mt-48" size={18}>
+         <Typography value={"content"} className="mt-20" size={18}>
              Secure Your Wallet
          </Typography>
          <Typography value={"content"} className="text-center font-bold px-4" size={24}>

@@ -7,11 +7,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      buffer: 'buffer',
+      buffer: 'buffer/',
       process: 'process/browser',
     },
   },
   optimizeDeps: {
+    include: ['buffer'],
     esbuildOptions: {
       define: {
         global: 'globalThis',  // Critical for 'global' being undefined

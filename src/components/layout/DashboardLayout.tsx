@@ -5,7 +5,7 @@ type IDashboard = {
 }
 const DashboardLayout = ({children}:IDashboard) => {
   return (
-    <div className="bg-dark flex flex-col gap-4 px-4 py-2 h-full">
+    <div className="bg-dark flex flex-col gap-4 px-4 py-2 h-screen overflow-hidden">
       {children}
     </div>
   )

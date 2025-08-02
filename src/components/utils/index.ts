@@ -1,4 +1,4 @@
-import { ArbitrumIcon, BaseIcon, CryptoIcon, EthereumIcon, ShieldIcon, TronIcon, USDCIcon, USDTIcon, ZeonIcon } from "../../assets";
+import { ArbitrumIcon, BaseIcon, CryptoIcon, EthereumIcon, ShieldIcon,  USDCIcon, USDTIcon, ZeonIcon } from "../../assets";
 import { BsQrCode } from "react-icons/bs";
 import { GrSend } from "react-icons/gr";
 import { TbExchange } from "react-icons/tb";
@@ -95,76 +95,88 @@ export const MenuData = [
   {
     name:"Receive",
     icon: BsQrCode,
-    href: 'receive'
+    href: '/all-networks',
+    action: 'receive'
   },
   {
     name:"Send",
     icon: GrSend,
-    href: 'send'
+    href: '/all-networks',
+    action: 'send'
   },
   {
     name:"Swap",
     icon: TbExchange,
-    href: 'swap'
+    href: '/swap'
   },
   {
     name:"Buy",
     icon: FaDollarSign,
-    href: 'buy'
+    href: '/buy'
   },
 ]
 
-export const NativeWalletData = [
-  {
-    id:1,
-    network: "Ethereum",
-    coinImg: EthereumIcon,
-    balance: 0.0267,
-    Equivalent: 100
-  },
-  {
-    id:2,
-    network: "Arbitrum",
-    coinImg: ArbitrumIcon,
-    balance: 200,
-    Equivalent: 93
-  },
-  {
-    id:3,
-    network: "Base",
-    coinImg: BaseIcon,
-    balance: 2000,
-    Equivalent: 1320
-  },
-  {
-    id:4,
-    network: "Tron",
-    coinImg: TronIcon,
-    balance: 200 ,
-    Equivalent: 62.60
-  },
-]
 
-export const StableWalletData = [
-  {
-    id:1,
-    network: "Tether Dollar",
-    coinImg: USDTIcon,
-    balance: 100,
-    Equivalent: 100
-  },
-  {
-    id:2,
-    network: "US Dollar Currency",
-    coinImg: USDCIcon,
-    balance: 400,
-    Equivalent: 100
-  },
-  {
-    id:2,
-    network: "Tron",
-    coinImg: USDTIcon,
-    balance: 400,
-    Equivalent: 100
-  },
-]
+
+
+export const getAllNetworkData = (nativeBalances: { ethereum: string | number; arbitrum: string | number; base: string | number; }, stableBalances: { usdt: string | number; usdc: string | number; }, walletAddress: string) => {
+    return [
+        {
+            id: 1,
+            network: "Ethereum",
+            coinImg: EthereumIcon,
+            balance: parseFloat(nativeBalances.ethereum as string) || 0,
+            type: "Native",
+            walletAddress
+        },
+        {
+            id: 2,
+            network: "Arbitrum",
+            coinImg: ArbitrumIcon,
+            balance: parseFloat(nativeBalances.arbitrum as string) || 0,
+            type: "Native",
+            walletAddress
+        },
+        {
+            id: 3,
+            network: "Base",
+            coinImg: BaseIcon,
+            balance: parseFloat(nativeBalances.base as string) || 0,
+            type: "Native",
+            walletAddress
+        },
+        {
+            id: 4,
+            network: "Ethereum",
+            coinImg: USDTIcon,
+            balance: parseFloat(stableBalances.usdt as string) || 0,
+            type: "Stable",
+            walletAddress
+        },
+        {
+            id: 5,
+            network: "Base",
+            coinImg: USDCIcon,
+            balance: parseFloat(stableBalances.usdc as string) || 0,
+            type: "Stable",
+            walletAddress
+        }
+    ];
+};
+
+
+
+export const getNativeData = (nativeBalances: { ethereum: string | number; base: string | number; arbitrum: string | number; }, walletAddress: string) => {
+    return [
+        { id: 1, network: "Ethereum", balance: parseFloat(nativeBalances.ethereum as string) || 0, Equivalent: 0, logo: EthereumIcon, walletAddress },
+        { id: 2, network: "Base", balance: parseFloat(nativeBalances.base as string) || 0, Equivalent: 0, logo: BaseIcon, walletAddress },
+        { id: 3, network: "Arbitrum", balance: parseFloat(nativeBalances.arbitrum as string) || 0, Equivalent: 0, logo: ArbitrumIcon,  walletAddress },
+    ];
+};
+
+export const getStableData = (stableBalances: { usdt: string | number; usdc: string | number; }, walletAddress: string) => {
+    return [
+        { id: 1, network: "USDT", balance: parseFloat(stableBalances.usdt as string) || 0, Equivalent: 0, logo: USDTIcon, walletAddress },
+        { id: 2, network: "USDC", balance: parseFloat(stableBalances.usdc as string) || 0, Equivalent: 0, logo: USDCIcon,walletAddress },
+    ];
+};

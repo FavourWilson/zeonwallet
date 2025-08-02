@@ -1,8 +1,15 @@
-import * as bip39 from 'bip39';
+import bip39 from 'bip39-light';
+import { ethers } from "ethers";
 
 export const generateMnemonic = (): string => {
-  const mnemonic = bip39.generateMnemonic(); // default: 128-bit entropy = 12 words
-  return mnemonic;
+    return bip39.generateMnemonic();
 };
 
-console.log(generateMnemonic());
+export const validateMnemonic = (mnemonic: string): boolean => {
+    return bip39.validateMnemonic(mnemonic);
+};
+
+export const getWalletFromMnemonic = (mnemonic: string) => {
+    const wallet = ethers.Wallet.fromPhrase(mnemonic);
+    return wallet;  // {address, privateKey, etc.}
+};

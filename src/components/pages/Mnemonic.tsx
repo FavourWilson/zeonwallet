@@ -14,7 +14,7 @@ const Mnemonic = () => {
             <Typography value={"content"} className="font-bold" size={18}>
                  💡 Write it down. Never share it.
             </Typography>
-            <div className="blur-lg hover:blur-none">
+            <div className="">
                 <RecoveryPhase/>
             </div>
             

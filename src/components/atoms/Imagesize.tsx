@@ -4,6 +4,7 @@ type ImageSizeProps = {
   width?: number;
   height?: number;
   alt?: string;
+  onclick?: () =>void
 };
 
 const Imagesize: React.FC<ImageSizeProps> = ({
@@ -11,7 +12,8 @@ const Imagesize: React.FC<ImageSizeProps> = ({
   value,
   width,
   height,
-  alt = "image"
+  alt = "image",
+  onclick
 }) => {
   // Fallback className if `value` is used
   let className = "";
@@ -39,6 +41,7 @@ const Imagesize: React.FC<ImageSizeProps> = ({
       alt={alt}
       width={width} // If width is passed manually
       height={height}
+      onClick={onclick}
       className={`object-contain ${!width && !height ? className : ""}`}
     />
   );

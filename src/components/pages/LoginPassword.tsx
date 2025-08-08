@@ -6,6 +6,7 @@ import { useWallet } from "../context/WalletProvider";
 import { useNavigate } from "react-router";
 import { ethers } from "ethers";
 import Typography from "../atoms/Typography";
+import DashboardLayout from "../layout/DashboardLayout";
 
 const LoginPassword = () => {
     const [password, setPassword] = useState("");
@@ -36,7 +37,8 @@ const LoginPassword = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center gap-4 mt-10">
+       <DashboardLayout>
+             <div className="flex flex-col justify-center items-center gap-4 mt-10">
             <Typography value="Heading" size={24} className="text-white font-bold">
                 Unlock Your Wallet
             </Typography>
@@ -59,6 +61,7 @@ const LoginPassword = () => {
                 <Button variant={"filled"} width={200} value={"Login"} onClick={handleLogin} />
             </div>
         </div>
+       </DashboardLayout>
     );
 };
 

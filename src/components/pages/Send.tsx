@@ -9,46 +9,46 @@ import Imagesize from "../atoms/Imagesize"
 import { getAllNetworkData } from "../utils"
 import { useWalletBalances } from "../utils/useWalletBalances"
 import { useWallet } from "../context/WalletProvider"
-import { useCallback, useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 import { ethers } from 'ethers';
 
 const Send = () => {
-    const { address } = useWallet();
+     const { address } = useWallet();
+    const navigate = useNavigate();
+    const { id } = useParams();
+
     const [recipient, setRecipient] = useState("");
     const [amount, setAmount] = useState("");
     const [selectedToken, setSelectedToken] = useState("ETH");
     const [estimatedGas, setEstimatedGas] = useState("0.00");
     const [error, setError] = useState("");
-    const navigate = useNavigate()
-    const handleRedirect = () => {
-        navigate("/home")
-    }
-    const { id } = useParams();
 
     const { nativeBalances, stableBalances } = useWalletBalances(address ?? "");
-
     const allNetworks = getAllNetworkData(nativeBalances, stableBalances, address ?? "");
-
     const coin = allNetworks.find((item) => item.id === Number(id));
-    const tokens = ["ETH", "USDT", "USDC"];
 
-    const estimateGasFee = useCallback(async () => {
-        // This is a mocked estimation. 
-        // In production, you’ll fetch real-time gas fees from provider or API.
+    const tokens = ["ETH", "USDT", "USDC"];
+ 
+    const handleRedirect = () =>{
+    navigate("/home")
+  }
+  
+    useEffect(() => {
+        const estimateGasFee = async () => {
         if (selectedToken === "ETH") {
             setEstimatedGas("0.002");
         } else {
-            setEstimatedGas("0.005");  // Token transfers cost a bit more gas
+            setEstimatedGas("0.005");
         }
-    }, [selectedToken]);
-
-    useEffect(() => {
+    };
         if (recipient && amount) {
             estimateGasFee();
         }
-    }, [recipient, amount, estimateGasFee]);
+    }, [recipient, amount, selectedToken]);
 
-    const handleSend = async () => {
+   
+
+    const handleSend = () => {
         setError("");
 
         if (!ethers.isAddress(recipient)) {
@@ -61,10 +61,16 @@ const Send = () => {
             return;
         }
 
-        // For now, we'll just simulate a send action
-        alert(`Sending ${amount} ${selectedToken} to ${recipient}. Gas Fee: ${estimatedGas} ETH`);
-
-        // In production, trigger a real transaction here using ethers.js or web3
+        navigate("/review-transaction", {
+            state: {
+                sender: address,
+                recipient,
+                amount,
+                selectedToken,
+                estimatedGas,
+                coin
+            }
+        });
     };
 
     if (!coin) return <div>Coin not found</div>;
